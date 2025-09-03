@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Trophy, GraduationCap, Code2 } from "lucide-react";
+import rollerHockeyPhoto from "@/assets/roller-hockey.jpg";
 
 const About = () => {
   return (
@@ -26,10 +27,21 @@ const About = () => {
               at the World Roller Games in Barcelona. This experience taught me discipline, 
               teamwork, and the pursuit of excellence - values I bring to every project.
             </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Currently exploring cutting-edge technologies like Retrieval-Augmented Generation (RAG), 
               Large Language Models, and building intelligent systems that solve real-world problems.
             </p>
+            
+            <div className="mt-8">
+              <img 
+                src={rollerHockeyPhoto} 
+                alt="Team India Roller Hockey at World Cup 2019" 
+                className="rounded-lg shadow-xl w-full object-cover"
+              />
+              <p className="text-sm text-muted-foreground/80 italic text-center mt-3">
+                Represented India in U-19 Roller Hockey World Cup 2019, Barcelona
+              </p>
+            </div>
           </div>
 
           <div className="space-y-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
