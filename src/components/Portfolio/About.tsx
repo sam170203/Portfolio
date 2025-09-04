@@ -1,6 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { Trophy, GraduationCap, Code2 } from "lucide-react";
-import rollerHockeyPhoto from "@/assets/roller-hockey.jpg";
+
+// Use direct image URL from Postimages.org
+const rollerHockeyPhoto = "https://i.postimg.cc/mrdCVZNt/team-india-roller-hockey.jpg";
+
+
 
 const About = () => {
   return (
@@ -37,6 +41,11 @@ const About = () => {
                 src={rollerHockeyPhoto} 
                 alt="Team India Roller Hockey at World Cup 2019" 
                 className="rounded-lg shadow-xl w-full object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  console.error('Failed to load roller hockey image:', e);
+                  e.currentTarget.style.display = 'none';
+                }}
               />
               <p className="text-sm text-muted-foreground/80 italic text-center mt-3">
                 Represented India in U-19 Roller Hockey World Cup 2019, Barcelona

@@ -83,6 +83,30 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* Image loading and fallback styles */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  img[loading] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  img[loading="eager"] {
+    opacity: 1;
+  }
+  
+  img:not([loading="eager"]) {
+    opacity: 1;
+  }
+  
+  /* Fallback for failed images */
+  img[style*="display: none"] {
+    display: none !important;
+  }
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;

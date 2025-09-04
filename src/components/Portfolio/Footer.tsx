@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="text-center md:text-left mb-6 md:mb-0">
             <h3 className="text-xl font-bold mb-2">Saksham Mudgal Sharma</h3>
             <p className="text-secondary-foreground/80">
-              Full Stack Developer & AI Enthusiast
+              AI Enthusiast
             </p>
           </div>
 
@@ -45,7 +45,7 @@ const Footer = () => {
 
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-secondary-foreground/60 text-sm flex items-center justify-center">
-            Made with <Heart className="h-4 w-4 mx-1 text-red-500" /> by Saksham Mudgal • {currentYear}
+            Made by Saksham Mudgal • {currentYear}
           </p>
         </div>
       </div>

@@ -12,7 +12,7 @@ const Projects = () => {
       icon: <Bot className="h-6 w-6" />,
       year: "2025",
       github: "#",
-      live: "#",
+      live: "https://genai-chatbot-smoky.vercel.app/",
       category: "AI/ML"
     },
     {
@@ -22,7 +22,7 @@ const Projects = () => {
       icon: <Heart className="h-6 w-6" />,
       year: "2025",
       github: "#",
-      live: "#",
+      live: "/health-monitoring",
       category: "Full Stack"
     }
   ];

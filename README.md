@@ -1,22 +1,12 @@
-# Welcome to your Lovable project
+# Saksham Mudgal Sharma - Portfolio Website
 
-## Project info
+This is a React + TypeScript + Vite portfolio website showcasing my work as an AI Enthusiast and developer.
 
-**URL**: https://lovable.dev/projects/4620e670-f5e2-44df-8139-a13cd7e81879
+## Getting Started
 
-## How can I edit this code?
+**Work Locally**
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/4620e670-f5e2-44df-8139-a13cd7e81879) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Clone this repo and run the development server to work on the project locally.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +52,10 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/4620e670-f5e2-44df-8139-a13cd7e81879) and click on Share -> Publish.
+You can deploy this project to any static hosting service like Vercel, Netlify, or GitHub Pages.
 
-## Can I connect a custom domain to my Lovable project?
+## Contact
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Email: mudgalsaksham@gmail.com
+- GitHub: [sam170203](https://github.com/sam170203)
+- LinkedIn: [saksham-mudgal](https://linkedin.com/in/saksham-mudgal)

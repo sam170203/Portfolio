@@ -1,7 +1,10 @@
-import { Button } from "@/components/ui/button";
-import { Download, Github, Linkedin, Mail } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
-import profilePicture from "@/assets/profile-picture.jpg";
+import { Github, Linkedin, Mail } from "lucide-react";
+
+// Use direct image URLs from Postimages.org
+const heroBg = "https://i.postimg.cc/1RdVfYJ1/saksham-portfolio-pic.jpg";
+const profilePicture = "https://i.postimg.cc/1RdVfYJ1/saksham-portfolio-pic.jpg";
+
+
 
 const Hero = () => {
   return (
@@ -26,7 +29,12 @@ const Hero = () => {
             <img 
               src={profilePicture} 
               alt="Saksham Mudgal Sharma" 
-              className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto object-cover shadow-xl border-4 border-white/20"
+              className="w-48 h-48 md:w-56 md:h-56 rounded-full mx-auto object-cover shadow-xl border-4 border-white/20"
+              loading="eager"
+              onError={(e) => {
+                console.error('Failed to load profile picture:', e);
+                e.currentTarget.style.display = 'none';
+              }}
             />
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
@@ -41,22 +49,6 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="animate-fade-in flex flex-wrap justify-center gap-4 mb-8" style={{ animationDelay: '0.3s' }}>
-          <Button 
-            size="lg" 
-            className="bg-white text-primary hover:bg-white/90 hover:shadow-glow transition-all duration-300 px-8 py-3 text-lg font-semibold"
-          >
-            <Download className="mr-2 h-5 w-5" />
-            Download Resume
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-white/30 text-white hover:bg-white/10 hover:border-white backdrop-blur-sm px-8 py-3 text-lg"
-          >
-            View Projects
-          </Button>
-        </div>
 
         <div className="animate-fade-in flex justify-center space-x-6" style={{ animationDelay: '0.6s' }}>
           <a 
