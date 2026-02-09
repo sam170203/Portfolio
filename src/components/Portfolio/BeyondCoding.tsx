@@ -2,9 +2,10 @@ import { Trophy, Medal, Flag, Users } from "lucide-react";
 import MediaSlider from "./MediaSlider";
 
 // Media items for the roller hockey slider: video first, then image
+// Files are in public/ folder so they are served from root
 const rollerHockeyMedia = [
-  { type: "video" as const, src: "/src/assets/roller-hockey.mp4" },
-  { type: "image" as const, src: "/src/assets/team-india.jpg", alt: "Team India at World Cup 2019" },
+  { type: "video" as const, src: "/roller-hockey.mp4" },
+  { type: "image" as const, src: "/team-india.jpg", alt: "Team India at World Cup 2019" },
 ];
 
 const BeyondCoding = () => {
