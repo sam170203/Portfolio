@@ -6,6 +6,10 @@ import path from "path";
 export default defineConfig(({ mode }) => ({
   // Base path for GitHub Pages deployment
   base: mode === 'production' ? '/Portfolio/' : '/',
+  // Build output directory for GitHub Pages
+  build: {
+    outDir: 'docs',
+  },
   server: {
     host: "::",
     port: 8080,
