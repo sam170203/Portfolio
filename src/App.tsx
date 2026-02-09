@@ -9,12 +9,15 @@ import HealthMonitoringPlaceholder from "./pages/HealthMonitoringPlaceholder";
 
 const queryClient = new QueryClient();
 
+// Get the base path from the environment or use '/' for local development
+const basename = import.meta.env.BASE_URL || '/';
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/health-monitoring" element={<HealthMonitoringPlaceholder />} />
