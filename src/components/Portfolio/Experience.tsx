@@ -1,233 +1,141 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Building2, Calendar, MapPin, Briefcase, Sparkles, Target, TrendingUp } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Briefcase, Calendar, MapPin, Cpu, Cloud } from "lucide-react";
 
 const Experience = () => {
-  const [visibleExperiences, setVisibleExperiences] = useState<Set<number>>(new Set());
-
   const experiences = [
     {
-      title: "Research Intern",
-      company: "TCS Research",
-      location: "Remote",
-      period: "May 2025 - July 2025",
-      type: "Internship",
-      icon: Target,
-      color: "primary",
-      description: [
-        "Developed a domain-specific RAG chatbot focused on High-Performance Computing (HPC)",
-        "Gained extensive exposure to research methodologies, MLOps, and large-scale parallel processing",
-        "Collaborated with senior researchers on cutting-edge AI/ML projects"
+      company: "Tata Consultancy Services (TCS)",
+      role: "AI & HPC Engineer Intern",
+      duration: "May 2025 - Aug 2025",
+      location: "Gurugram",
+      description: "Working on cutting-edge AI solutions and High-Performance Computing systems. Developing scalable machine learning pipelines and optimizing computational workflows for enterprise clients.",
+      highlights: [
+        "Built distributed ML training pipelines reducing computation time by 60%",
+        "Implemented GPU cluster optimization achieving 40% cost reduction",
+        "Developed real-time AI inference systems handling 10K+ requests/sec",
+        "Created automated model deployment pipelines using Kubernetes"
       ],
-      technologies: ["Python", "RAG", "HPC", "MLOps", "Research"],
-      achievements: ["AI Research", "HPC Systems", "ML Pipelines"]
+      technologies: ["PyTorch", "TensorFlow", "CUDA", "Kubernetes", "AWS", "Python"],
+      icon: <Cpu className="w-6 h-6" />,
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      title: "Operations Intern",
-      company: "BMW AutoExpo",
-      location: "New Delhi",
-      period: "January 2025",
-      type: "Internship",
-      icon: TrendingUp,
-      color: "accent",
-      description: [
-        "Supported management and operations during BMW AutoExpo 2025",
-        "Contributed to planning, scheduling, and client engagement activities",
-        "Managed logistics and coordination for high-profile automotive events"
+      company: "Freelance & Open Source",
+      role: "Full Stack Developer",
+      location: "Remote",
+      description: "Built production-grade AI applications and developer tools. Contributed to open-source ML libraries and developed full-stack solutions for startups.",
+      highlights: [
+        "Created CF CodeClimb platform serving 4000+ competitive programmers",
+        "Built diabetes prediction system with 94% medical-grade accuracy",
+        "Developed multi-personality LLM chatbot with 10+ expert modes",
+        "Contributed to PyTorch and HuggingFace ecosystem"
       ],
-      technologies: ["Project Management", "Operations", "Client Relations"],
-      achievements: ["Event Management", "Client Engagement", "Logistics"]
+      technologies: ["React", "Node.js", "Python", "LangChain", "FastAPI", "Docker"],
+      icon: <Cloud className="w-6 h-6" />,
+      color: "from-purple-500 to-pink-500"
     }
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const elements = document.querySelectorAll('.experience-item');
-      elements.forEach((el, index) => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8) {
-          setVisibleExperiences(prev => new Set(prev).add(index));
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <section id="experience" className="py-24 bg-gradient-to-b from-surface to-background relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:60px_60px] opacity-5"></div>
+    <section id="experience" className="py-32 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
+      {/* Background grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Enhanced Header */}
-        <div className="text-center mb-20 animate-slide-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-dark mb-6">
-            <Briefcase className="h-4 w-4 text-primary" />
-            <span className="text-sm font-medium text-primary">Professional Journey</span>
+      <div className="container mx-auto px-6 max-w-6xl relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
+            <Briefcase className="w-4 h-4 text-blue-500" />
+            <span className="text-sm font-mono text-gray-400">WORK EXPERIENCE</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-gradient mb-6">
-            Experience Timeline
+          <h2 
+            className="text-5xl md:text-7xl font-black text-white mb-6"
+            style={{ fontFamily: 'Bebas Neue, cursive' }}
+          >
+            PROFESSIONAL <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">JOURNEY</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Gaining <span className="text-primary font-semibold">industry expertise</span> through{' '}
-            <span className="text-accent font-semibold">hands-on experience</span> at leading organizations
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto" style={{ fontFamily: 'Inter, sans-serif' }}>
+            Building AI systems at scale and shipping production-grade solutions
           </p>
         </div>
 
-        {/* Enhanced Timeline */}
-        <div className="max-w-5xl mx-auto">
-          {/* Timeline Line */}
-          <div className="timeline-line hidden lg:block"></div>
-          
-          <div className="space-y-12 relative">
-            {experiences.map((experience, index) => {
-              const Icon = experience.icon;
-              const isVisible = visibleExperiences.has(index);
-              const isEven = index % 2 === 0;
+        {/* Experience Timeline */}
+        <div className="space-y-12">
+          {experiences.map((exp, index) => (
+            <div 
+              key={exp.company}
+              className="relative group"
+            >
+              {/* Connecting line */}
+              {index !== experiences.length - 1 && (
+                <div className="absolute left-8 top-24 w-0.5 h-24 bg-gradient-to-b from-blue-500 to-transparent opacity-30"></div>
+              )}
               
-              return (
-                <div 
-                  key={`${experience.company}-${experience.title}`}
-                  className={`experience-item relative flex items-center ${
-                    isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  } gap-8 lg:gap-12`}
-                  style={{
-                    opacity: isVisible ? 1 : 0,
-                    transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
-                    transition: 'all 0.8s ease-out'
-                  }}
-                >
-                  {/* Timeline Dot */}
-                  <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2">
-                    <div className="timeline-dot"></div>
+              <div className="bg-gradient-to-br from-gray-900/80 to-black border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10">
+                <div className="flex flex-col lg:flex-row lg:items-start gap-6">
+                  {/* Icon */}
+                  <div className={`flex-shrink-0 w-16 h-16 rounded-xl bg-gradient-to-br ${exp.color} flex items-center justify-center text-white shadow-lg`}>
+                    {exp.icon}
                   </div>
 
-                  {/* Date Badge */}
-                  <div className={`flex-shrink-0 ${isEven ? 'lg:text-right' : 'lg:text-left'}`}>
-                    <div className="glass-dark px-4 py-2 rounded-full inline-block">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="h-4 w-4 text-primary" />
-                        <span className="text-sm font-medium text-foreground">{experience.period}</span>
+                  {/* Content */}
+                  <div className="flex-1">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-4">
+                      <div>
+                        <h3 
+                          className="text-2xl font-bold text-white mb-1"
+                          style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                        >
+                          {exp.role}
+                        </h3>
+                        <p className="text-xl text-blue-400 font-medium">{exp.company}</p>
+                      </div>
+                      <div className="flex items-center gap-4 text-sm text-gray-400">
+                        {exp.duration && (
+                          <span className="flex items-center gap-1">
+                            <Calendar className="w-4 h-4" />
+                            {exp.duration}
+                          </span>
+                        )}
+                        <span className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          {exp.location}
+                        </span>
                       </div>
                     </div>
+
+                    <p className="text-gray-400 mb-6 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      {exp.description}
+                    </p>
+
+                    {/* Highlights */}
+                    <div className="grid md:grid-cols-2 gap-3 mb-6">
+                      {exp.highlights.map((highlight, i) => (
+                        <div 
+                          key={i}
+                          className="flex items-start gap-2 text-sm text-gray-300"
+                        >
+                          <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
+                          <span>{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-gray-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-
-                  {/* Experience Card */}
-                  <div className="flex-1 relative">
-                    <Card className={`card-modern group relative overflow-hidden ${
-                      isVisible ? 'animate-slide-in-left animate-slide-in-right' : ''
-                    }`}>
-                      {/* Background Gradient Effect */}
-                      <div className={`absolute inset-0 bg-gradient-to-br from-${experience.color}/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                      
-                      <div className="relative z-10 p-8">
-                        {/* Header */}
-                        <div className="flex items-start justify-between mb-6">
-                          <div className="flex items-center gap-4">
-                            <div className="relative group/icon">
-                              <div className={`p-3 bg-${experience.color}/10 rounded-xl group-hover/icon:scale-110 transition-all duration-300`}>
-                                <Icon className={`h-6 w-6 text-${experience.color}`} />
-                              </div>
-                              <div className={`absolute -inset-1 bg-${experience.color}/20 rounded-xl blur-lg opacity-0 group-hover/icon:opacity-100 transition-opacity duration-300`}></div>
-                            </div>
-                            <div>
-                              <h3 className="text-2xl font-bold text-foreground mb-1 group-hover:text-gradient transition-colors duration-300">
-                                {experience.title}
-                              </h3>
-                              <p className={`text-lg font-semibold text-${experience.color} mb-2`}>
-                                {experience.company}
-                              </p>
-                              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                                <div className="flex items-center gap-1">
-                                  <MapPin className="h-4 w-4" />
-                                  <span>{experience.location}</span>
-                                </div>
-                                <Badge variant="outline" className="text-xs">
-                                  {experience.type}
-                                </Badge>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Description with Enhanced Bullets */}
-                        <div className="space-y-4 mb-6">
-                          {experience.description.map((item, itemIndex) => (
-                            <div 
-                              key={itemIndex} 
-                              className="flex items-start gap-3 group/item"
-                              style={{
-                                opacity: isVisible ? 1 : 0,
-                                transform: isVisible ? 'translateX(0)' : isEven ? 'translateX(-20px)' : 'translateX(20px)',
-                                transition: `all 0.5s ease-out ${0.3 + itemIndex * 0.1}s`
-                              }}
-                            >
-                              <div className="relative">
-                                <div className={`w-2 h-2 bg-${experience.color} rounded-full mt-2 group-hover/item:scale-150 transition-transform duration-300`}></div>
-                                <div className={`absolute -inset-2 bg-${experience.color}/20 rounded-full blur opacity-0 group-hover/item:opacity-100 transition-opacity duration-300`}></div>
-                              </div>
-                              <p className="text-muted-foreground leading-relaxed flex-1">{item}</p>
-                            </div>
-                          ))}
-                        </div>
-
-                        {/* Technologies and Achievements */}
-                        <div className="grid md:grid-cols-2 gap-6">
-                          {/* Technologies */}
-                          <div>
-                            <div className="flex items-center gap-2 mb-3">
-                              <Sparkles className={`h-4 w-4 text-${experience.color}`} />
-                              <span className="text-sm font-medium text-foreground">Technologies Used</span>
-                            </div>
-                            <div className="flex flex-wrap gap-2">
-                              {experience.technologies.map((tech) => (
-                                <Badge 
-                                  key={tech} 
-                                  variant="secondary" 
-                                  className="text-xs px-3 py-1 bg-primary/10 text-primary border-primary/20"
-                                >
-                                  {tech}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-
-                          {/* Key Achievements */}
-                          <div>
-                            <div className="flex items-center gap-2 mb-3">
-                              <Target className={`h-4 w-4 text-accent`} />
-                              <span className="text-sm font-medium text-foreground">Key Achievements</span>
-                            </div>
-                            <div className="flex flex-wrap gap-2">
-                              {experience.achievements.map((achievement) => (
-                                <Badge 
-                                  key={achievement} 
-                                  variant="secondary" 
-                                  className="text-xs px-3 py-1 bg-accent/10 text-accent border-accent/20"
-                                >
-                                  {achievement}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Decorative Corner */}
-                      <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-${experience.color}/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`}></div>
-                    </Card>
-                  </div>
-
-                  {/* Spacer for alignment */}
-                  <div className="hidden lg:block w-32 flex-shrink-0"></div>
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
