@@ -4,8 +4,8 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Base path for GitHub Pages deployment
-  base: mode === 'production' ? '/Portfolio/' : '/',
+  // Base path - use root for Vercel deployment
+  base: '/',
   // Build output directory for GitHub Pages
   build: {
     outDir: 'docs',
