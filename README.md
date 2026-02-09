@@ -1,61 +1,93 @@
-# Saksham Mudgal Sharma - Portfolio Website
+🚀 Saksham Mudgal Sharma — Portfolio Website
 
-This is a React + TypeScript + Vite portfolio website showcasing my work as an AI Enthusiast and developer.
+A modern, responsive developer portfolio built with React, TypeScript, Vite, and Tailwind CSS, showcasing my projects, skills, and experience as an AI & Software Engineering enthusiast.
 
-## Getting Started
+🌐 Live Website:
+👉 https://portfolio-one-azure-18.vercel.app/
 
-**Work Locally**
+✨ Features
 
-Clone this repo and run the development server to work on the project locally.
+🌙 Modern dark-first UI with glassmorphism effects
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+⚡ Fast & lightweight (Vite-powered)
 
-Follow these steps:
+📱 Fully responsive (mobile, tablet, desktop)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+🎨 Built with shadcn/ui + Tailwind CSS
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+🧩 Clean component-based architecture
 
-# Step 3: Install the necessary dependencies.
-npm i
+🚀 Auto-deployed using Vercel
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+🛠 Tech Stack
+
+Frontend: React, TypeScript
+
+Build Tool: Vite
+
+Styling: Tailwind CSS, shadcn/ui
+
+Deployment: Vercel
+
+📦 Getting Started (Run Locally)
+Prerequisites
+
+Node.js (v18+ recommended)
+
+npm
+(Install via nvm
+ if needed)
+
+Installation
+# Clone the repository
+git clone https://github.com/sam170203/Portfolio.git
+
+# Navigate to the project directory
+cd Portfolio
+
+# Install dependencies
+npm install
+
+# Start the development server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+The app will run at:
 
-**Use GitHub Codespaces**
+http://localhost:5173
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🚀 Deployment
 
-## What technologies are used for this project?
+This project is deployed on Vercel.
 
-This project is built with:
+To deploy your own version:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Fork this repository
 
-## How can I deploy this project?
+Import it into Vercel
 
-You can deploy this project to any static hosting service like Vercel, Netlify, or GitHub Pages.
+Select the main branch
 
-## Contact
+Deploy 🚀
 
-- Email: mudgalsaksham@gmail.com
-- GitHub: [sam170203](https://github.com/sam170203)
+📂 Project Structure (Overview)
+src/
+ ├── components/     # Reusable UI components
+ ├── pages/          # Page sections
+ ├── styles/         # Global styles
+ ├── assets/         # Images & icons
+ └── main.tsx        # App entry point
+
+🤝 Contributing
+
+Contributions, suggestions, and feedback are welcome!
+Feel free to fork the repo and submit a pull request.
+
+📬 Contact
+
+Email: mudgalsaksham@gmail.com
+
+GitHub: https://github.com/sam170203
+
+LinkedIn: https://www.linkedin.com/in/saksham-mudgal
 - LinkedIn: [saksham-mudgal](https://linkedin.com/in/saksham-mudgal)
