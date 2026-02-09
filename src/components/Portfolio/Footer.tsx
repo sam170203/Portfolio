@@ -1,8 +1,6 @@
-import { Github, Linkedin, Mail, Heart, Code, Terminal } from "lucide-react";
+import { Github, Linkedin, Mail, Code, Terminal } from "lucide-react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="bg-black border-t border-white/10 py-12">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -51,11 +49,6 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <Code className="w-4 h-4" />
               <span>Built with React, TypeScript & Tailwind</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <span>Made with</span>
-              <Heart className="w-4 h-4 text-red-500 fill-red-500" />
-              <span>by Saksham • {currentYear}</span>
             </div>
           </div>
         </div>

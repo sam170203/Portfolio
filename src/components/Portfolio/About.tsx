@@ -77,9 +77,9 @@ const About = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-accent rounded-2xl blur opacity-25 group-hover:opacity-40 transition-opacity duration-300"></div>
               <div className="relative glass-dark p-1 rounded-2xl">
                 <div className="relative overflow-hidden rounded-2xl">
-                  <img 
-                    src={rollerHockeyPhoto} 
-                    alt="Team India Roller Hockey at World Cup 2019" 
+                  <img
+                    src={rollerHockeyPhoto}
+                    alt="Team India Roller Hockey at World Cup 2019"
                     className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                     onError={(e) => {

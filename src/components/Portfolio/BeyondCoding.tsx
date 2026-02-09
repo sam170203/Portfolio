@@ -1,4 +1,11 @@
 import { Trophy, Medal, Flag, Users } from "lucide-react";
+import MediaSlider from "./MediaSlider";
+
+// Media items for the roller hockey slider: video first, then image
+const rollerHockeyMedia = [
+  { type: "video" as const, src: "/src/assets/roller-hockey.mp4" },
+  { type: "image" as const, src: "/src/assets/team-india.jpg", alt: "Team India at World Cup 2019" },
+];
 
 const BeyondCoding = () => {
   return (
@@ -74,32 +81,24 @@ const BeyondCoding = () => {
             </div>
           </div>
 
-          {/* Visual Content */}
+          {/* Visual Content - Roller Hockey Media Slider */}
           <div className="relative">
-            <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-900 to-black border border-white/10 rounded-2xl overflow-hidden group">
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-              
-              {/* Placeholder content */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-orange-500/30 flex items-center justify-center">
-                    <Trophy className="w-12 h-12 text-orange-500" />
-                  </div>
-                  <p className="text-white font-medium mb-1">Roller Hockey Action</p>
-                  <p className="text-sm text-gray-500">World Roller Games 2019</p>
-                </div>
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute top-4 right-4 flex items-center gap-2">
-                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                <span className="text-xs text-gray-500 font-mono">LIVE</span>
-              </div>
+            {/* 
+              MediaSlider showing roller hockey video and team image
+              - Video shows full body action (object-contain, no cropping)
+              - Auto-advances every 4 seconds
+              - Manual navigation with arrows
+            */}
+            <div className="relative bg-gradient-to-br from-gray-900 to-black border border-white/10 rounded-2xl overflow-hidden group">
+              <MediaSlider
+                media={rollerHockeyMedia}
+                autoPlayInterval={4000}
+                autoPlay={true}
+              />
             </div>
 
             {/* Floating badge */}
-            <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-xl shadow-xl">
+            <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 py-3 rounded-xl shadow-xl z-10">
               <div className="text-sm font-bold">International Athlete</div>
             </div>
           </div>
