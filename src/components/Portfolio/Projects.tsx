@@ -1,10 +1,21 @@
 import { useState } from "react";
-import { Github, ExternalLink, ArrowUpRight, Terminal, Activity, Bot } from "lucide-react";
+import { Github, ExternalLink, ArrowUpRight, Terminal, Activity, Bot, Building2 } from "lucide-react";
 
 const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
 
   const projects = [
+    {
+      title: "Hotel Booking Platform",
+      description: "Full-stack hotel booking system with real-time availability, room management, and booking functionality. Features modern UI with responsive design.",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      liveUrl: "https://hotel-frontend-git-main-sakshams-projects-26da22c3.vercel.app/",
+      githubUrl: "https://github.com/sam170203/hotel-frontend.git",
+      icon: <Building2 className="w-8 h-8" />,
+      color: "from-amber-500 to-orange-600",
+      stats: "Full Stack",
+      featured: true
+    },
     {
       title: "CF CodeClimb",
       description: "Competitive programming analytics platform used by 4000+ users. Track ratings, analyze performance, and climb the ranks with data-driven insights.",
