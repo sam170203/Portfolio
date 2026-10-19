@@ -7,9 +7,9 @@ describe("TransformerVisualizer", () => {
     render(<TransformerVisualizer />);
 
     expect(screen.getByRole("img", { name: /transformer reverse-engineering diagram/i })).toBeInTheDocument();
-    expect(screen.getByText("Input tokens")).toBeInTheDocument();
-    expect(screen.getByText("Multi-head attention")).toBeInTheDocument();
-    expect(screen.getByText("Feed-forward network")).toBeInTheDocument();
-    expect(screen.getByText("Next-token output")).toBeInTheDocument();
+    expect(screen.getByText("Token stream")).toBeInTheDocument();
+    expect(screen.getByText("Attention topology")).toBeInTheDocument();
+    expect(screen.getByText("Residual refinement")).toBeInTheDocument();
+    expect(screen.getByText("Probability field")).toBeInTheDocument();
   });
 });

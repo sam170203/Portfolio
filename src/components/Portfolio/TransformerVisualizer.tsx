@@ -3,10 +3,10 @@ import { lazy, Suspense, useEffect, useRef, useState } from "react";
 const TransformerScene = lazy(() => import("./TransformerScene"));
 
 const stages = [
-  { name: "Input tokens", detail: "tokens → embeddings" },
-  { name: "Multi-head attention", detail: "context → relationships" },
-  { name: "Feed-forward network", detail: "features → refinement" },
-  { name: "Next-token output", detail: "logits → probability" },
+  { name: "Token stream", detail: "tokens → vectors", signal: "01" },
+  { name: "Attention topology", detail: "queries ↔ keys ↔ values", signal: "08 heads" },
+  { name: "Residual refinement", detail: "normalize → transform → add", signal: "12 blocks" },
+  { name: "Probability field", detail: "logits → sampled token", signal: "softmax" },
 ];
 
 const supportsWebGL = () => typeof WebGLRenderingContext !== "undefined";
@@ -55,17 +55,21 @@ const TransformerVisualizer = () => {
           </Suspense>
         )}
         <div className="transformer-stage-glow" />
+        <div className="transformer-hud">
+          <span>DECODER / TRACE 01</span>
+          <span>CONTEXT WINDOW → ACTIVE</span>
+        </div>
       </div>
       <div className="transformer-diagram" role="img" aria-label="Transformer reverse-engineering diagram">
         {stages.map((stage, index) => (
           <div className="transformer-node" key={stage.name}>
-            <span className="transformer-node-index">0{index + 1}</span>
+            <span className="transformer-node-index">{stage.signal}</span>
             <strong>{stage.name}</strong>
             <small>{stage.detail}</small>
           </div>
         ))}
       </div>
-      <p className="transformer-caption">A decoder-only Transformer rebuilt layer by layer: from tokenization and masked attention to training, checkpoints, and controlled sampling.</p>
+      <p className="transformer-caption">A decoder-only Transformer rebuilt layer by layer: token vectors enter, attention routes context, residual blocks refine the signal, and a probability field resolves the next token.</p>
     </div>
   );
 };
