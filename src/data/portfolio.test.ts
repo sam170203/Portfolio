@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { experience, profile, projects } from "./portfolio";
+import { experience, profile, projects, skills } from "./portfolio";
 
 describe("portfolio claims", () => {
   it("presents NCR Atleos as a Software Engineer role without a lineage-delivery claim", () => {
@@ -19,5 +19,10 @@ describe("portfolio claims", () => {
 
   it("uses Software Engineer positioning", () => {
     expect(profile.role).toContain("Software Engineer");
+  });
+
+  it("presents agentic and AI-native capabilities without claiming a shipped agent product", () => {
+    expect(skills.map(({ title }) => title)).toEqual(expect.arrayContaining(["Agentic workflows", "AI-native delivery"]));
+    expect(skills.find(({ title }) => title === "Agentic workflows")?.detail).toContain("retrieval-backed memory");
   });
 });

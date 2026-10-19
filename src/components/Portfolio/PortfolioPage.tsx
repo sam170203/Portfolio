@@ -146,7 +146,22 @@ const PortfolioPage = () => {
           </div>
           <div className="athlete-note">
             <p className="eyebrow">Beyond engineering</p>
-            <p><strong>Team India, U-19 Roller Hockey</strong> — World Roller Games, Barcelona 2019. Competitive sport taught me to prepare deeply, communicate under pressure, and turn team strategy into execution.</p>
+            <div className="athlete-copy">
+              <p><strong>Team India, U-19 Roller Hockey</strong> — World Roller Games, Barcelona 2019. Competitive sport taught me to prepare deeply, communicate under pressure, and turn team strategy into execution.</p>
+              <p className="athlete-detail">The same mindset I bring to engineering: read the system, make the next move count, and help the team execute when the stakes are real.</p>
+            </div>
+            <figure className="athlete-film">
+              <video
+                aria-label="Team India roller hockey highlight"
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster="/images/roller-hockey.jpg"
+                src="/roller-hockey.mp4"
+              />
+              <figcaption>World Roller Games · Barcelona, 2019</figcaption>
+            </figure>
           </div>
         </section>
 

@@ -19,4 +19,13 @@ describe("PortfolioPage", () => {
     expect(github).toHaveAttribute("href", "https://github.com/sam170203");
     expect(github).toHaveAttribute("rel", "noreferrer");
   });
+
+  it("shows the Team India motion highlight with a usable poster fallback", () => {
+    render(<PortfolioPage />);
+
+    const highlight = screen.getByLabelText("Team India roller hockey highlight");
+    expect(highlight).toHaveAttribute("src", "/roller-hockey.mp4");
+    expect(highlight).toHaveAttribute("poster", "/images/roller-hockey.jpg");
+    expect(highlight).toHaveProperty("muted", true);
+  });
 });

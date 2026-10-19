@@ -108,6 +108,14 @@ export const skills = [
     detail: "RAG, embeddings, OpenAI API, PyTorch, Transformers, vector retrieval",
   },
   {
+    title: "Agentic workflows",
+    detail: "Tool use, retrieval-backed memory, model context, human-in-the-loop orchestration, evaluation-aware iteration",
+  },
+  {
+    title: "AI-native delivery",
+    detail: "Codex, Claude, AI-assisted development, specification-driven workflows, code review, rapid prototyping",
+  },
+  {
     title: "Product engineering",
     detail: "React, Next.js, TypeScript, Tailwind CSS, Docker, Git",
   },
