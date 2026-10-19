@@ -7,8 +7,10 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { experience, externalLinks, profile, projects, skills } from "../../data/portfolio";
+import Reveal from "./Reveal";
+import TransformerVisualizer from "./TransformerVisualizer";
 
 const navigation = [
   { href: "#work", label: "Work" },
@@ -21,11 +23,14 @@ const ExternalArrow = () => <ArrowUpRight aria-hidden="true" className="h-4 w-4"
 
 const PortfolioPage = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [motionReady, setMotionReady] = useState(false);
+
+  useEffect(() => setMotionReady(true), []);
 
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <main className="portfolio-shell">
+    <main className={`portfolio-shell ${motionReady ? "motion-ready" : ""}`}>
       <a className="skip-link" href="#content">Skip to content</a>
       <header className="site-header">
         <nav className="site-nav" aria-label="Main navigation">
@@ -66,7 +71,7 @@ const PortfolioPage = () => {
           <div className="hero-copy">
             <p className="eyebrow">New Delhi, India · Available for opportunities</p>
             <h1 id="hero-title">Software Engineer <span>for data platforms and applied AI.</span></h1>
-            <p className="hero-intro">{profile.intro}</p>
+            <p className="hero-intro">I build dependable systems where the hard parts matter: data platforms that make complexity usable, real-time products that hold up under pressure, and applied AI that earns its place in the workflow.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#work">Explore selected work <ArrowDownRight aria-hidden="true" className="h-5 w-5" /></a>
               <a className="button button-secondary" href={`mailto:${profile.email}`}>Start a conversation <ArrowUpRight aria-hidden="true" className="h-5 w-5" /></a>
@@ -83,19 +88,21 @@ const PortfolioPage = () => {
         </section>
 
         <section id="work" className="content-section work-section" aria-labelledby="work-heading">
-          <div className="section-intro">
+          <Reveal className="section-intro">
             <p className="eyebrow">01 — Selected work</p>
             <h2 id="work-heading">Systems with an observable outcome.</h2>
-            <p>Each project starts from a real engineering problem and makes the contribution, tools, and result visible.</p>
-          </div>
+            <p>Not experiments for a slide deck—work that makes the contribution, the engineering choices, and the result visible.</p>
+          </Reveal>
           <div className="project-list">
             {projects.map((project, index) => (
-              <article key={project.name} className={`project-card project-card-${index + 1}`}>
+              <Reveal key={project.name} className={`project-reveal project-reveal-${index + 1}`} delay={index * 90}>
+              <article className={`project-card project-card-${index + 1}`}>
                 <div className="project-index">0{index + 1}</div>
                 <div className="project-body">
                   <p className="project-eyebrow">{project.eyebrow}</p>
                   <h3>{project.name}</h3>
                   <p className="project-description">{project.description}</p>
+                  {project.name === "Transformer From Scratch" && <TransformerVisualizer />}
                   <dl className="project-proof">
                     <div><dt>Contribution</dt><dd>{project.contribution}</dd></div>
                     <div><dt>Outcome</dt><dd>{project.outcome}</dd></div>
@@ -109,15 +116,16 @@ const PortfolioPage = () => {
                   </div>
                 </div>
               </article>
+              </Reveal>
             ))}
           </div>
         </section>
 
         <section id="experience" className="content-section experience-section" aria-labelledby="experience-heading">
-          <div className="section-intro split-intro">
+          <Reveal className="section-intro split-intro">
             <p className="eyebrow">02 — Experience</p>
             <h2 id="experience-heading">Where I&apos;ve built.</h2>
-          </div>
+          </Reveal>
           <div className="experience-list">
             {experience.map((item) => (
               <article key={item.company} className="experience-item">
@@ -143,10 +151,10 @@ const PortfolioPage = () => {
         </section>
 
         <section id="skills" className="content-section skills-section" aria-labelledby="skills-heading">
-          <div className="section-intro">
+          <Reveal className="section-intro">
             <p className="eyebrow">03 — Capabilities</p>
             <h2 id="skills-heading">Tools follow the problem.</h2>
-          </div>
+          </Reveal>
           <div className="capability-grid">
             {skills.map((skill) => (
               <article key={skill.title} className="capability">
@@ -165,10 +173,10 @@ const PortfolioPage = () => {
         </section>
 
         <section id="contact" className="contact-section" aria-labelledby="contact-heading">
-          <div>
+          <Reveal>
             <p className="eyebrow">04 — Contact</p>
-            <h2 id="contact-heading">Let&apos;s make the next hard thing simpler.</h2>
-          </div>
+            <h2 id="contact-heading">Bring me the problem that cannot be average.</h2>
+          </Reveal>
           <div className="contact-links">
             <a className="contact-email" href={`mailto:${profile.email}`}>{profile.email} <ArrowUpRight aria-hidden="true" /></a>
             <a href={externalLinks.linkedin} target="_blank" rel="noreferrer"><Linkedin aria-hidden="true" /> LinkedIn</a>

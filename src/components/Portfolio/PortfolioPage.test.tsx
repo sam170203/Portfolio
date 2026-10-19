@@ -9,7 +9,7 @@ describe("PortfolioPage", () => {
     expect(screen.getByRole("heading", { level: 1, name: /software engineer/i })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: /observable outcome/i })).toBeInTheDocument();
     expect(screen.getByRole("region", { name: /where i.ve built/i })).toBeInTheDocument();
-    expect(screen.getByRole("region", { name: /next hard thing simpler/i })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: /problem that cannot be average/i })).toBeInTheDocument();
   });
 
   it("uses safe external source links instead of JavaScript-only buttons", () => {
